@@ -11,7 +11,7 @@ export default function Header() {
       </div>
       <img
         className="image"
-        src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2019_17/2835276/190425-thor-avengers-endgame-ew-339p.jpg"
+        src="https://i.pinimg.com/originals/15/be/33/15be33d514f99d4cb6bc453e405cbb6d.jpg?crop"
         alt=""
       ></img>
     </div>
