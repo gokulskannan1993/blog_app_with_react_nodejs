@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="header">
       <div className="titles">
-        <span className="titleSmall">React </span>
+        <span className="titleSmall">React & Node </span>
         <span className="titleLarge">Blog</span>
       </div>
       <img
