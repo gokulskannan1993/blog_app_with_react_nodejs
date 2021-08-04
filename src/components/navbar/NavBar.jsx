@@ -1,8 +1,10 @@
 import "./navbar.css";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
+  const user = false;
   return (
     <div className="top-nav">
       <div className="navLeft">
@@ -13,19 +15,47 @@ export default function NavBar() {
       </div>
       <div className="navCenter">
         <ul className="navList">
-          <li className="navListItem">HOME</li>
-          <li className="navListItem">ABOUT</li>
-          <li className="navListItem">CONTACTS</li>
-          <li className="navListItem">WRITE</li>
-          <li className="navListItem">LOGOUT</li>
+          <li className="navListItem">
+            <Link className="link" to="/">
+              HOME
+            </Link>
+          </li>
+          <li className="navListItem">
+            <Link className="link" to="/write">
+              WRITE
+            </Link>
+          </li>
+          <li className="navListItem">
+            <Link className="link" to="/signin">
+              {user && "LOGOUT"}
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="navRight">
-        <img
-          className="navImg"
-          src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt=""
-        ></img>
+        {user ? (
+          <img
+            className="navImg"
+            src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt=""
+          ></img>
+        ) : (
+          <div>
+            <ul className="navList">
+              <li className="navListItem">
+                <Link className="link" to="/signin">
+                  LOGIN
+                </Link>
+              </li>
+              <li className="navListItem">
+                <Link className="link" to="/signup">
+                  REGISTER
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+
         <i
           className="navSearchIcon
          fas fa-search"

@@ -8,8 +8,6 @@ import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-
-  
   const user = false;
 
   return (
@@ -20,21 +18,13 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route path="/signup">
-            <Register></Register>
-          </Route>
-          <Route path="/signin">
-            <Login></Login>
-          </Route>
-          <Route path="/settings">
-            <Settings></Settings>
-          </Route>
+          <Route path="/signup">{user ? <Home /> : <Register />}</Route>
+          <Route path="/signin">{user ? <Home /> : <Login />}</Route>
+          <Route path="/settings">{user ? <Settings /> : <Login />}</Route>
           <Route path="/post/:postID">
             <Single></Single>
           </Route>
-          <Route path="/write">
-            <Write></Write>
-          </Route>
+          <Route path="/write">{user ? <Write /> : <Login />}</Route>
         </Switch>
       </Router>
     </div>
