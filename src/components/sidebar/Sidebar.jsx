@@ -7,7 +7,7 @@ export default function Sidebar() {
       <div className="item">
         <span className="title">ABOUT ME</span>
         <img
-          src="https://www.usnews.com/dims4/USNEWS/dbd1d93/2147483647/thumbnail/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F15%2F416be67d7734d2693f38093874c3e6%2Fmedia%3Af24eabe52b5040d8ba9fe4bd293e3d44Financial_Markets-Bull_Market_Birthday_60467.jpg"
+          src="https://loveandunitywin.files.wordpress.com/2021/05/naturebanner.jpg"
           alt=""
         ></img>
         <p>
