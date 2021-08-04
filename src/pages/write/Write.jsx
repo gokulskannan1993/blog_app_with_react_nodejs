@@ -21,6 +21,7 @@ export default function Write() {
             autoFocus={true}
           />
         </div>
+
         <div className="writeFormGroup">
           <textarea
             placeholder="Tell your Story..."
