@@ -6,7 +6,7 @@ export default function Post() {
     <div className="post">
       <img
         className="postImage"
-        src="https://media.istockphoto.com/photos/green-leaf-with-dew-on-dark-nature-background-picture-id1050634172?k=6&m=1050634172&s=612x612&w=0&h=C6CWho9b4RDhCqvaivYOLV2LK6FzygYpAyLPBlF1i2c="
+        src="https://emilyelizabeth.blog/wp-content/uploads/2020/03/photo-1542435503-956c469947f6.jpeg"
         alt=""
       />
       <div className="postInfo">

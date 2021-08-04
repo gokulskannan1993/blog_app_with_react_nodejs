@@ -11,7 +11,7 @@ export default function Header() {
       </div>
       <img
         className="image"
-        src="https://cdn.wallpapersafari.com/24/56/aLSZX9.jpg"
+        src="https://www.zastavki.com/pictures/originals/2015/Girls_The_girl_in_the_rays_of_a_bright_summer_sun_093946_.jpg"
         alt=""
       ></img>
     </div>
