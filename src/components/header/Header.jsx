@@ -11,7 +11,7 @@ export default function Header() {
       </div>
       <img
         className="image"
-        src="https://i.pinimg.com/originals/15/be/33/15be33d514f99d4cb6bc453e405cbb6d.jpg?crop"
+        src="https://cdn.wallpapersafari.com/24/56/aLSZX9.jpg"
         alt=""
       ></img>
     </div>
