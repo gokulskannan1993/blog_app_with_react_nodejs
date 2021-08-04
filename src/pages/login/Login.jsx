@@ -3,7 +3,7 @@ import "./login.css";
 export default function Login() {
   return (
     <div className="login">
-      <span className="loginTitle">Login</span>
+      <span className="loginTitle">Sign In</span>
       <form action="" className="loginForm">
         <label htmlFor="">Email</label>
         <input
@@ -17,9 +17,9 @@ export default function Login() {
           className="loginInput"
           placeholder="Enter your password"
         />
-        <button className="loginButton">Login</button>
+        <button className="loginButton">Sign In</button>
       </form>
-      <button className="loginRegisterButton">Register</button>
+      <button className="loginRegisterButton">Sign Up</button>
     </div>
   );
 }

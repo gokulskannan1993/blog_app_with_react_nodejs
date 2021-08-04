@@ -1,4 +1,4 @@
-.login {
+.register {
   font-family: "Open Sans", sans-serif;
 
   height: 100vh;
@@ -7,45 +7,45 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(rgb(255, 255, 255, 0.5), rgb(255, 255, 255, 0.5)),
-    url("https://theplaidzebra.com/wp-content/uploads/2017/07/Truths-and-myths-to-minimalist-living.jpg");
+    url("https://coolwallpapers.me/picsup/3058945-a-cup-of_an-empty_background_blank_book-bindings_business_coffee_communication_computational_computer_copy_copy-space_creativity_delivery_desk_digital_document_education_empty_facts_freelance_fre.jpg");
   background-size: cover;
 }
 
-.loginTitle {
+.registerTitle {
   font-size: 50px;
 }
 
-.loginForm {
+.registerForm {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.loginForm > label {
+.registerForm > label {
   margin: 10px 0;
 }
 
-.loginInput {
+.registerInput {
   padding: 10px;
   background-color: white;
   border: none;
 }
 
-.loginButton {
+.registerButton {
   margin-top: 20px;
   cursor: pointer;
-  background-color: lightcoral;
+  background-color: teal;
   border: none;
   color: white;
   border-radius: 10px;
   padding: 10px;
 }
 
-.loginRegisterButton {
+.registerLoginButton {
   position: absolute;
   top: 60px;
   right: 20px;
-  background-color: teal;
+  background-color: lightcoral;
   cursor: pointer;
   border: none;
   color: white;
