@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
+      {/* <Home></Home> */}
       <Single></Single>
     </div>
   );
