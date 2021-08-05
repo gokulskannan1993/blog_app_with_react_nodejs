@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// PostSchema
+// CategorySchema
 const CategorySchema = new mongoose.Schema(
   {
     name: {
