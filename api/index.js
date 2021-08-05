@@ -1,9 +1,10 @@
 const express = require("express");
-const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
 dotenv.config();
+
+const app = express();
 
 // Connection to the database in MONGO ATLAS
 mongoose
