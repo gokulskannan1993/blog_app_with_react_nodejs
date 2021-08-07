@@ -1,10 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const authRoute = require("./routes/auth");
+const app = express();
 
 dotenv.config();
-
-const app = express();
+app.use(express.json());
 
 // Connection to the database in MONGO ATLAS
 mongoose
@@ -16,9 +17,8 @@ mongoose
   .then(console.log("Connected to DB"))
   .catch((err) => console.log(err));
 
-app.use("/", (req, res) => {
-  console.log("Hello World");
-});
+// Routes to auth
+app.use("/api/auth", authRoute);
 
 app.listen("5000", () => {
   console.log("Backend is running");
