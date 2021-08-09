@@ -54,4 +54,20 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// GET USER
+router.get("/:id", async (req, res) => {
+  try {
+    // fetch a single user
+    const user = await User.findById(req.params.id);
+
+    // dont fetch the password of the user
+    const { password, ...others } = user._doc;
+
+    // response
+    res.status(200).json(others);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
