@@ -1,9 +1,12 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+
+// routes
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
+const catRoute = require("./routes/categories");
 
 const app = express();
 
@@ -28,6 +31,9 @@ app.use("/api/users", userRoute);
 
 // Routes to posts
 app.use("/api/posts", postRoute);
+
+// Routes to categories
+app.use("/api/categories", catRoute);
 
 app.listen("5000", () => {
   console.log("Backend is running");
