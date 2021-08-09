@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const Post = require("../models/Post");
 
-// Update User
+// UPDATE USER
 router.put("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
     // encrypt password
@@ -17,12 +18,36 @@ router.put("/:id", async (req, res) => {
         {
           $set: req.body,
         },
-        { new: true }
+        { new: true } // to update to new value
       );
 
       res.status(200).json(updateUser);
     } catch (err) {
       res.status(500).json(err);
+    }
+  } else {
+    res.status(401).json("Not your account");
+  }
+});
+
+// DELETE USER
+router.delete("/:id", async (req, res) => {
+  if (req.body.userId === req.params.id) {
+    try {
+      // find the user
+      const user = await User.findById(req.params.id);
+      try {
+        // delete all posts of the user
+        await Post.deleteMany({ username: user.username });
+        // delete all creadentials
+        await User.findByIdAndDelete(req.params.id);
+
+        res.status(200).json("User deleted");
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } catch (err) {
+      res.status(404).json("User not found");
     }
   } else {
     res.status(401).json("Not your account");
