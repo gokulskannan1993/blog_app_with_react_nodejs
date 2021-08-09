@@ -76,4 +76,38 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// GET MULTIPLE POSTS
+router.get("/", async (req, res) => {
+  const username = req.query.user;
+  const category = req.query.category;
+
+  try {
+    // fetch a multiple posts
+    let posts;
+
+    // if there is a username
+    if (username) {
+      posts = await Post.find({ username: username });
+    }
+
+    // if there is a category
+    else if (category) {
+      posts = await Post.find({
+        categories: {
+          $in: [category],
+        },
+      });
+    }
+
+    // fetch all posts
+    else {
+      posts = await Post.find();
+    }
+    // response
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
