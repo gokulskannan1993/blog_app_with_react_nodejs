@@ -17,28 +17,28 @@ router.post("/", async (req, res) => {
 
 // UPDATE  Post
 router.put("/:id", async (req, res) => {
-  if (req.body.userId === req.params.id) {
-    // encrypt password
-    if (req.body.password) {
-      const salt = bcrypt.genSaltSync(10);
-      req.body.password = bcrypt.hashSync(req.body.password, salt);
-    }
-    try {
-      // update all creadentials
-      const updateUser = await User.findByIdAndUpdate(
-        req.params.id,
-        {
-          $set: req.body,
-        },
-        { new: true } // to update to new value
-      );
+  try {
+    const post = await Post.findById(req.params.id);
+    if (post.username === req.body.username) {
+      try {
+        // update post
+        const updatedPost = await Post.findByIdAndUpdate(
+          req.params.id,
+          {
+            $set: req.body,
+          },
+          { new: true }
+        );
 
-      res.status(200).json(updateUser);
-    } catch (err) {
-      res.status(500).json(err);
+        res.status(200).json(updatedPost);
+      } catch (error) {
+        res.status(500).json(error);
+      }
+    } else {
+      res.status(401).json("Not your Post");
     }
-  } else {
-    res.status(401).json("Not your account");
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
