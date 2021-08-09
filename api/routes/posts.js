@@ -66,14 +66,11 @@ router.delete("/:id", async (req, res) => {
 // GET Post
 router.get("/:id", async (req, res) => {
   try {
-    // fetch a single user
-    const user = await User.findById(req.params.id);
-
-    // dont fetch the password of the user
-    const { password, ...others } = user._doc;
+    // fetch a single post
+    const post = await Post.findById(req.params.id);
 
     // response
-    res.status(200).json(others);
+    res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
   }
